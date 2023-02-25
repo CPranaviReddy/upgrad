@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+        <title>First HTML Page</title>
+        <style>
+
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1{
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        p.p1{
+            font-size: 12px;
+            line-height: 22px;/*20px 18px*/
+        }
+
+        div button{
+            background-color: white;
+            color: black;
+            height: 50px;
+            width: 80px;
+            border: 1px solid black;
+            font-size: 13px;
+        }
+
+        </style>
+        <script>
+            function message()
+            {
+                alert('Coming Soon');
+            }
+        </script>
+        
+    </head>
+    <body>
+        <h1>This is a demo serving HTML page through node</h1>
+        <p>Creating a server using node is very easy. A full fledged we application can be created</p>
+        <p>HTTP is a Node.js module which can be used to create HTTP server and client applications in JavaScript. Popular JavaScript frameworks including Express and HapiJS are built on top of the HTTP module.</p>
+        <div><button onclick="message()">Learn...</button></div>
+    </body>
+</html>

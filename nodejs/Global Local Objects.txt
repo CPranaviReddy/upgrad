@@ -1,0 +1,37 @@
+Global objects
+---------- globaldemo.js ---------------
+console.log("dirname" + __dirname);
+
+console.log("dirname" + __filename);
+
+setTimeout(() => {
+  console.log("Times Up !!!")
+},2000);
+
+================================================================
+The clearTimeout(t) global function is used to stop a timer that was previously created with setTimeout().
+================================================================
+function printHello() {
+   console.log( "Hello, World!");
+}
+// Now call above function after 2 seconds
+var t = setTimeout(printHello, 2000);
+// Now clear the timer
+clearTimeout(t);
+
+
+=================================================================
+The setInterval(cb, ms) global function is used to run callback cb repeatedly after at least ms milliseconds.
+=================================================================
+function printHello() {
+   console.log( "Hello, World!");
+}
+// Now call above function after 2 seconds
+setInterval(printHello, 2000);
+
+
+=================================================================
+
+
+
+and if you copy the above into some other file this will print for that file specifically it means these objects are used locally but in node js these are global objects

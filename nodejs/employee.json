@@ -1,0 +1,55 @@
+[{
+    "Name":"raj",
+    "Age":"32",
+    "dept":"SE",
+    "Emp id":"16347",
+    "city":"Hyderabad",
+    "gender":"male"
+},
+{
+"Name":"ravi",
+"Age":"35",
+"dept":"Devops",
+"Emp id":"16348",
+"city":"Bangalore",
+"gender":"male"
+},
+{
+"Name":"pranavi",
+"Age":"28",
+"dept":"Frontend Developer",
+"Emp id":"16349",
+"city":"Chennai",
+"gender":"female"
+},
+{
+
+"Name":"arjun",
+"Age":"34",
+"dept":"Testing",
+"Emp id":"16350",
+"city":"Mumbai",
+"gender":"male"
+},
+{
+    
+    "Name":"sita",
+    "Age":"26",
+    "dept":"QA",
+    "Emp id":"16237",
+    "city":"Delhi",
+    "gender":"female"
+
+},
+
+{
+    "Name":"radha",
+    "Age":"30",
+    "dept":"Architect",
+    "Emp id":"16867",
+    "city":"Kolkata",
+    "gender":"female"
+
+}
+
+]

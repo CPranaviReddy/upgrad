@@ -1,0 +1,62 @@
+1. in the NodeWS directory create empty directory:  mkdir firstproject
+2. cd firstproject
+3. npm init
+4. If you want to write something else Press enter in the following 
+   package name: (firstproject)
+version: (1.0.0)
+description:  <This is my first demo project>
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:  <Virendra>
+license: (ISC)
+About to write to D:\reactpro1\NodeWS\firstproject\package.json:
+
+{
+  "name": "firstproject",
+  "version": "1.0.0",
+  "description": "This is my first demo project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Virendra",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
+
+Project is created !!
+
+
+==================== Install the Packages locally in project=========================
+Syntax: npm i <package_name>
+eg: npm i nodemon
+
+1. we will see nodemon is installed inside the package.json file
+2. just add  below in  the scripts
+  "start": "nodemon demo.js"   (demo.js is the name of the file)
+
+create a file with demo.js:
+console.log('We are into NODEJS')
+
+(1) node demo.js
+this will only run the file directly and display the output
+
+(2) npm start
+this will go to package.json file and whatever the script is there with the filename it will execute it and if you make any changes in the file it will automatically display the output without running
+now make any changes in the file it will automatically display
+
+
+================= Install nodemon globally ================
+
+npm i -g nodemon
+
+you can execute any file from anywhere
+
+1. co inside NodeWS folder
+2. nodemon hello.js
+
+

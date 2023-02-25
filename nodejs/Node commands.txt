@@ -1,0 +1,9 @@
+1. In terminal -> node
+2. .editor
+3. var a = 10
+   var b = 20
+   a+b
+   (Ctrl + D)
+4. .save first.js
+5. .load first.js
+6. .exit
