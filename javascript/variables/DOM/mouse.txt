@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>These methods demonstrate that different multiple addEventListener event handlers can be defined for single element</p>
+<p id="singleElement">Default Content</p>
+<button id="demoButton">Test it</button>
+</body>
+<script type="text/javascript">
+var demoButtonElement = document.getElementById("demoButton"); 
+
+demoButtonElement.addEventListener("mouseover", mouseOverFunction); 
+demoButtonElement.addEventListener("click", clickFunction); 
+demoButtonElement.addEventListener("mouseout", mouseOutFunction);
+
+function mouseOverFunction() {
+document.getElementById("singleElement").innerHTML = "This element represents mouseOver event";
+}
+function clickFunction() {
+document.getElementById("singleElement").innerHTML = "This element represents click event";
+}
+function mouseOutFunction() {
+document.getElementById("singleElement").innerHTML = "This element represents mouseOut event";
+}
+</script>
+</html>
+
+
+------------------ Example 2:--------------------------------
+<!DOCTYPE html>
+<html lang= "en" >
+<head>
+<title> This is an example for mouse events </title>
+</head>
+<body>
+<!-- code to show working of onclick handler -->
+<button onclick= "funHandler()" style="color:#FF0000"> Click here to generate mouse click event. </button>
+<script>
+function funHandler() {
+document.getElementById("divid").innerHTML="The Mouse click event is generated and it handled.";
+}
+</script>
+<div id="divid" style="color: #0900C4"></div>
+</body>
+</html>
+
+As in the above code the mouse click event is generated once when we click the button. The button is register or specify the onclick handler function as well that is funHandler() function, so when the button is clicked the click event get generate and funHandler() function executes, which is printing some text as shown in above output.
+
+---------------- Exampl3 3:-----------------------------------
+
+<!DOCTYPE html>
+<html lang= "en" >
+<head>
+<title> This is an example for mouse events </title>
+</head>
+<body>
+<!-- code to show working of onmouseup handler -->
+<button onmouseup= "funHandler()" style="color:#FF0000"> Click here to generate mouse up event. </button>
+<script>
+function funHandler() {
+document.getElementById("divid").innerHTML="The Mouse up event is generated and it handled.";
+}
+</script>
+<div id="divid" style="color: #0900C4"></div>
+</body>
+</html>
+
+As in the above code the mouse up event is handle once when we press the button. The button is register or specify the onmouseup handler function as well that is funHandler() function, so when the button is pressed the onmouseup event get generate and funHandler() function is executes, which is printing some text as shown in above output.

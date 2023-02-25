@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>DOM Examples</title>
+    </head>
+    
+    <body>
+        <h1>getElementById example</h1>
+        <p id = "description">
+            This will be  turned to blue.
+            
+        </p>
+        <script>
+            let paragraph = document.getElementById("description");
+            console.log("paragraph contents:",paragraph.innerHTML.trim());
+            paragraph.style.color = "blue";
+            paragraph.style.fontSize = "50px";
+        </script>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+//split
+var a= "today we are learning array topic";
+var t=a.split(" ");
+console.log(t);
+//join
+var a1="today we are learning array topic";
+var a1_str= a1.join("$");
+console.log(a1);
+console.log(a1_str);
+

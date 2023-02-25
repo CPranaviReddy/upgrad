@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            javascript getElementByClassName
+        </title>
+    </head>
+    <body>
+        <div id="parent-id"></div>
+        <p class="test">Hello World1</p>
+        <p class="test">Hello World2</p>
+        <p class="test">Hello World3</p>
+        <p class="test">Hello World4</p>
+    </div>
+    <p>This is my para outside the div</p>
+    <script>
+        var parentDOM=getElementById("parent-id");
+        var test= parentDOM.getElementByClassName("test");
+        console.log(test);//html collection 1
+        var testTarget=parentDOM.getElementByClassName("test")[0];//first element as we wanted
+        console.log(testTarget);
+        var testTarget1=parentDOM.getElementByClassName("test")[2];//first element as we wanted
+        console.log(testTarget1);
+        testTarget1.test.color="blue";
+    </script>
+    </body>
+</html>

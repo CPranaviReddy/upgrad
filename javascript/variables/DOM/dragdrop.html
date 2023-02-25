@@ -1,0 +1,223 @@
+-------------------------HTML:-----------------------
+<div class="container">
+  <div class="draggable">Drag me!
+    <span>LOGO</span>
+  </div>
+</div>
+
+--------------------------CSS:------------------------
+body {padding:10px}
+
+.container {
+  width: 50%;
+  overflow: hidden;
+  height: 200px;
+}
+
+.draggable {
+  width:100px;
+  height:100px;
+  background-color:#666;
+  color:white;
+  padding:10px 12px;
+  cursor:move;
+  position:relative; /* important (all position that's not `static`) */
+}
+
+--------------------------- JS ---------------------
+var get = function(el) {
+  if (typeof el === 'string') {
+    return document.querySelector(el);
+  }
+  return el;
+};
+var dragable = function(parentEl, dragEl) {
+  var parent = get(parentEl);
+  var target = get(dragEl);
+  var drag = false;
+  offsetX = 0;
+  offsetY = 0;
+  var mousemoveTemp = null;
+
+  if (target) {
+    var mouseX = function(e) {
+      if (e.pageX) {
+        return e.pageX;
+      }
+      if (e.clientX) {
+        return e.clientX + (document.documentElement.scrollLeft ?
+          document.documentElement.scrollLeft :
+          document.body.scrollLeft);
+      }
+      return null;
+    };
+
+    var mouseY = function(e) {
+      if (e.pageY) {
+        return e.pageY;
+      }
+      if (e.clientY) {
+        return e.clientY + (document.documentElement.scrollTop ?
+          document.documentElement.scrollTop :
+          document.body.scrollTop);
+      }
+      return null;
+    };
+    
+    var move = function (x, y) {
+      var xPos = parseInt(target.style.left) || 0;
+      var yPos = parseInt(target.style.top) || 0;
+
+      target.style.left = (xPos + x) + 'px';
+      target.style.top  = (yPos + y) + 'px';
+    };
+    
+    var mouseMoveHandler = function (e) {
+      e = e || window.event;
+      if(!drag){return true};
+
+      var x = mouseX(e);
+      var y = mouseY(e);
+      if (x != offsetX || y != offsetY) {
+        move(x - offsetX, y - offsetY);
+        offsetX = x;
+        offsetY = y;
+      }
+      return false;
+    };
+    
+    var start_drag = function (e) {
+      e = e || window.event;
+
+      offsetX=mouseX(e);
+      offsetY=mouseY(e);
+      drag=true; // basically we're using this to detect dragging
+
+      // save any previous mousemove event handler:
+      if (document.body.onmousemove) {
+        mousemoveTemp = document.body.onmousemove;
+      }
+      document.body.onmousemove = mouseMoveHandler;
+      return false;
+    };
+    
+    var stop_drag = function () {
+      drag=false;      
+
+      // restore previous mousemove event handler if necessary:
+      if (mousemoveTemp) {
+        document.body.onmousemove = mousemoveTemp;
+        mousemoveTemp = null;
+      }
+      return false;
+    };
+    
+    parent.onmousedown = start_drag;
+    parent.onmouseup = stop_drag;
+  }
+}
+
+dragable('.container', '.draggable');
+
+
+
+--------------------------- Example 2:------------------------------------
+
+----------HTML:----------
+<div class="empty">
+      <div class="fill" draggable="true"></div>
+    </div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+
+
+-----------CSS:------------
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: steelblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.empty {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  border: solid 3px black;
+  background: white;
+}
+
+.fill {
+  background-image: url("https://source.unsplash.com/random/150x150");
+  height: 145px;
+  width: 145px;
+  cursor: pointer;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+.hovered {
+  background-color: #333;
+  border-color: white;
+  border-style: dashed;
+}
+
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+
+-------------JS:------------------
+const fill = document.querySelector(".fill");
+const empties = document.querySelectorAll(".empty");
+
+const dragStart = function () {
+  this.className += " hold";
+  setTimeout(() => (this.className = "invisible"), 0);
+};
+
+const dragEnd = function () {
+  this.className = "fill";
+};
+
+const dragOver = function (e) {
+  // Ref: https://developer.cdn.mozilla.net/en-US/docs/Web/API/Document/dragover_event
+  e.preventDefault();
+};
+
+const dragEnter = function (e) {
+  e.preventDefault();
+  this.className += " hovered";
+};
+
+const dragLeave = function () {
+  this.className = "empty";
+};
+
+const dragDrop = function () {
+  this.className = "empty";
+  this.append(fill);
+};
+
+fill.addEventListener("dragstart", dragStart);
+fill.addEventListener("dragend", dragEnd);
+
+for (const empty of empties) {
+  empty.addEventListener("dragover", dragOver);
+  empty.addEventListener("dragenter", dragEnter);
+  empty.addEventListener("dragleave", dragLeave);
+  empty.addEventListener("drop", dragDrop);
+}

@@ -1,0 +1,16 @@
+var users =[ 
+ { UName: 'John' },
+ { UName: 'Andrew' },
+ { UName: 'Martin' },
+ { UName: 'Kevin' }]
+
+var user = users.find(function(user){
+ return user.UName === 'Martin';
+});
+console.log(user);
+
+var UserName= ['M,A,R,T,I,N'];
+var char=function(UserName,index){
+    console.log(UserName.split('').reverse().join('-'));
+};
+UserName.forEach(char);

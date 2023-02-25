@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Blog page</title>
+    <style>
+        h1 {
+            color: red;
+        }
+
+        h3 {
+            color: green;
+        }
+
+        .paragraph {
+            color: crimson;
+        }
+
+        #firstpara {
+            color: pink;
+        }
+
+        li {
+            color: green;
+            font-size: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="heading">Food Blog</h1>
+
+    <h3 id="about">About Bloger</h3>
+
+    <p class="paragraph" id="firstpara">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel iusto aspernatur
+        molestias
+        solutahic, repellat dolores qui qua.
+    </p>
+    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas placeat soluta ipsum
+        errorsimilique, vitae,tempore iure a veniam itaque eaque.</p>
+
+    <p class="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima vel quia accusamus tenetur
+        asperiores .</p>
+
+    <div class="food">
+        <h3>Food varities</h3>
+        <ul>
+            <li>Indian</li>
+            <li>Italian</li>
+            <li>Chinese</li>
+            <li>South indian</li>
+        </ul>
+
+    </div>
+
+    <div class="menu">
+        <h2>Indian food</h2>
+        <p class="parafood">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, illum.</p>
+
+        <h2>Italian</h2>
+        <p class="parafood">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, illum.</p>
+
+        <h2>Chinese</h2>
+        <p class="parafood">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, illum.</p>
+
+        <h2>South Indian</h2>
+        <p class="parafood">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, illum.</p>
+
+    </div>
+
+    <script>
+        let heading = document.getElementById('heading');
+        console.log("heading content:", heading.innerHTML.trim());
+        heading.style.color = 'blue'
+
+        let about = document.getElementById('about');
+        console.log("about content:", about.innerHTML.trim());
+        about.style.color = 'red';
+
+        about.style.fontFamily = 'sans-serief';
+
+        // query selector all
+
+        let paraitems = document.querySelectorAll('.paragraph');
+        for (let i = 0; i < paraitems.length; i++) {
+            paraitems[i].style.color = 'blue';
+        }
+
+        // query selector 1st item pink to violet
+
+        let firstpara = document.querySelector('#firstpara');
+        firstpara.style.color = 'violet';
+
+        // list items query selector color and font size change
+
+        let listitems = document.querySelector('li');
+        listitems.style.color = 'orange';
+        listitems.style.fontSize = '13px';
+
+        // paragraph food items
+
+        let parafood = document.getElementsByClassName('parafood');
+        // parafood[0].style.color = 'red'
+        for (let i = 0; i < parafood.length; i++) {
+            parafood[i].style.color = 'red';
+        }
+        parafood[1].style.color = 'grey';
+        parafood[3].style.color = 'grey';
+
+
+    </script>
+</body>
+
+</html>

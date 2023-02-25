@@ -1,0 +1,34 @@
+
+// this is our constructor function
+function Student(student_name, student_age, student_gender) {
+    this.name = student_name
+    this.age =  student_age
+    this.gender = student_gender
+}
+
+const Student1 = new Student('Pankaj','23','Male');
+const Student2 = new Student('Reena','25','Female');
+const Student3 = new Student('Rajeev','26','Male');
+
+// console.log("Student1: "+"\n   " +Student1.name+ "\n   " + Student1.age+ "\n   " + Student1.gender );
+// console.log("Student2: "+"\n   " +Student2.name+"\n   "  + Student2.age+"\n   "  + Student2.gender );
+// console.log("Student3: "+"\n   " +Student3.name+"\n   "  + Student3.age+"\n   "  + Student3.gender );
+
+
+
+Student.prototype.college= 'Sai Eng college';
+
+// adding properties branch and college to Student object
+Student1.branch = 'ECE';
+//Student1.college= 'Sai Eng college';
+
+Student2.branch = 'CSE';
+//Student2.college= 'Chaitanya Eng college';
+
+Student3.branch = 'MEC';
+//Student3.college= 'Veera Eng college';
+
+
+console.log("Student1: "+"\n   " +Student1.name+ "\n   " + Student1.age+ "\n   " + Student1.gender+"\n   " + Student1.branch+ "\n   "+ Student1.college);
+console.log("Student2: "+"\n   " +Student2.name+ "\n   " + Student2.age+ "\n   " + Student2.gender+"\n   " + Student1.branch+ "\n   "+ Student2.college);
+console.log("Student3: "+"\n   " +Student3.name+ "\n   " + Student3.age+ "\n   " + Student3.gender+"\n   " + Student1.branch+ "\n   "+ Student3.college);

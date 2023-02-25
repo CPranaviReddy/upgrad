@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>DOM Examples</title>
+      <style>
+            .main {
+               font-weight: bold;
+            }
+      </style>
+   </head>
+   <body>
+      <h1>querySelector Example</h1>
+
+      <p class="main"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt modi debitis 
+        excepturi vitae rem commodi quidem porro ea. Tempora, aliquid. 
+      </p>
+      <p id="description" class="main">
+            querySelector's power is exceeded only by it's mystery.
+      </p>
+      
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere sequi perspiciatis quibusdam libero aliquam
+        id nemo nulla magnam aspernatur autem.
+      </div>
+      <div id="response">
+            It's not that mysterious, querySelector selects elements
+            using the same rules as CSS selectors.
+      </div>
+      
+      <script>
+            // selects the <p> using class selector
+            let main = document.querySelector(".main");
+            console.log(main.innerHTML.trim());
+            main.style.color = "blue";
+
+            // Selects the <div> using tag selector
+            let response = document.querySelector("div");
+            console.log(response.innerHTML.trim());
+            response.style.color = "red";
+      </script>
+   </body>
+</html>

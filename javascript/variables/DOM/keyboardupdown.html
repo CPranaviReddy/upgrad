@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>The background color is set to green as long as we are holding a key by placing the cursor inside the text field and when the key is released the background of the text field is set to red color. </p>
+<input type="text" id="de" onkeydown="keydown()" onkeyup="keyup()" onkeypress="pressFunc()">
+<script>
+function keydown() {
+document.getElementById("de").style.backgroundColor = "blue";
+}
+function keyup() {
+document.getElementById("de").style.backgroundColor = "red";
+}
+function pressFunc() {
+    alert("A character key is typed in the text field and promoting this alert to be displayed")
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title> javascript getElementByTagName() Example</title>
+    </head>
+    <body>
+        <h1>javascript getElementByTagName()</h1>
+        <h2>first heading</h2>
+        <p>This is my first paragraph</p>
+        <h2>second heading</h2>
+        <p>This is my second paragraph</p>
+        <h2>third heading</h2>
+        <p>This is my third paragraph</p>
+         //<div>This is my text</div>
+        <button id="btncount">count H2</button>
+        //button id="button1">change</button>
+        <script>
+            let btn=document.getElementById('btncount');
+            //changing the single div element to blue from crimson
+           //document.getElementById('button1').onclick=function(){
+               // document.getElementById('div1').style.color='blue';
+            //}
+            btn.addEventListener('click',() => {
+                let headings=document.getElementsByTagName('h2');
+                let ps= document.getElementsByTagName('p');
+               // document.body.style.color='crimson';
+                alert('The number of h2 tags :${headings.length} and p tags :${paragraph.length}');
+
+            });
+        </script>
+    </body>
+</html>
